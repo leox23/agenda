@@ -1,0 +1,16 @@
+
+{
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(‚›²ıÿÿÿÿ8Õ‚•Ë0
+0
+java:S1220""Move this file to a named package.
+e
+java:S2095$"HUse try-with-resources or close this "FileReader" in a "finally" clause.(‹äÆı8ş„•Ë0
+f
+java:S2095"IUse try-with-resources or close this "PrintWriter" in a "finally" clause.(™Öìæ8ÿ„•Ë0
+i
+java:S2095%"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(Âõ–8…•Ë0
+\
+java:S1118":Add a private constructor to hide the implicit public one.(ó¿ÊÊúÿÿÿÿ8¦…•Ë0
+O
+java:S1135."2Complete the task associated to this TODO comment.(‡ñÅ¼8Ş†•Ë0
+Z	java:S1066"9Replace this use of System.out or System.err by a logger.(ÿó’İúÿÿÿÿ8è†•Ë0
