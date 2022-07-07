@@ -8,12 +8,16 @@ public class Agenda {
     
 	private static ArrayList<Contacto> contactos;
 	
-	
-	
 	public static void agregarContactos(String name, String celphone, String city){
+		
 		leerContactos();
-		int nextId =    contactos.size() + 1;
+		int nextId =    contactos.size();
 		contactos.add( new Contacto(String.valueOf(nextId), name, celphone, city));
+		escribirContactos();
+		
+	}
+	
+	public static void escribirContactos(){
 		File archivo;
 		PrintWriter pw;
 		try {
@@ -28,10 +32,7 @@ public class Agenda {
 			e.printStackTrace();
 		}
 		
-		
 	}
-	
-	
 	
 	public static void leerContactos(){
 		
@@ -61,7 +62,30 @@ public class Agenda {
 		for(Contacto con : contactos){
 			System.out.println(con.toString());
 		}
+		System.out.println();
 		
+	}
+	
+	public static void eliminarContacto(String id){
+		leerContactos();
+		try{
+			Contacto f = contactos.remove(Integer.parseInt(id));
+			indexarContactos();
+			escribirContactos();
+			
+		}catch(IndexOutOfBoundsException e){
+			System.out.println("No existe ID en la agenda");
+		}
+		
+	}
+	
+	public static void indexarContactos(){
+		
+		int index = 0;
+		for(Contacto c : contactos){
+			c.setId(String.valueOf(index));
+			index += 1;
+		}
 	}
 	
 	
