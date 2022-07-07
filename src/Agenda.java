@@ -14,6 +14,7 @@ public class Agenda {
 		int nextId =    contactos.size();
 		contactos.add( new Contacto(String.valueOf(nextId), name, celphone, city));
 		escribirContactos();
+		System.out.println("\nCONTACTO AGREGADO EXITOSAMENTE");
 		
 	}
 	
@@ -30,8 +31,7 @@ public class Agenda {
 			pw.close();
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
-		
+		}	
 	}
 	
 	public static void leerContactos(){
@@ -48,17 +48,18 @@ public class Agenda {
 			while((lineaArchivo = br.readLine()) != null ){
 				String [] contacto = lineaArchivo.split(",");
 				contactos.add(new Contacto(contacto[0],contacto[1],contacto[2],contacto[3]));
-				
 			}
+			br.close();
 			
 		}catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
 		}
 		
 	}
 	
 	public static void imprimirContactos(){
 		leerContactos();
+		System.out.println("--LISTADO DE CONTACTOS-- \n");
 		for(Contacto con : contactos){
 			System.out.println(con.toString());
 		}
@@ -93,30 +94,30 @@ public class Agenda {
 		
 		leerContactos();
 		for (Contacto i : contactos) {
-			if (i.getId().equals(id)) {
-			System.out.println("hola desde el if");
-				String name = contactoMod.getName();
-				if (name != "") {
-					i.setName(contactoMod.getName());
-				}
-				
-
-				String celphone = contactoMod.getCelphone();
-				if (celphone != "") {
-					i.setCelphone(contactoMod.getCelphone());
-				}
-
-				String city = contactoMod.getCity();
-				if (name != "") {
-					i.setCity(contactoMod.getCity());
-				}
+			if (i.getId().equals(id)) {	
+				i.setName((contactoMod.getName().equals("")) ? i.getName() : contactoMod.getName());
+				i.setCelphone((contactoMod.getCelphone().equals("")) ? i.getCelphone() : contactoMod.getCelphone());
+				i.setCity((contactoMod.getCity().equals("")) ? i.getCity() : contactoMod.getCity());
 				break;
 			}
 		}
 		escribirContactos();
+		System.out.println("\nCONTACTO MODIFICADO EXITOSAMENTE \n");
 		
 	}
 	
+	
+	public static Contacto buscarContacto(String id){
+		leerContactos();
+		try{
+			return contactos.get(Integer.parseInt(id));
+			
+		}catch(IndexOutOfBoundsException e){
+			return null;
+		}catch(NumberFormatException e){
+			return null;
+		}		
+	}
 	
 	
 }

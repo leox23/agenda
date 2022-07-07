@@ -55,7 +55,7 @@ public class Contacto {
 
 	@Override
 	public String toString() {
-		return "Contacto [id=" + id + ", name=" + name + ", celphone=" + celphone + ", city=" + city + "]";
+		return "id=" + id + ", name=" + name + ", celphone=" + celphone + ", city=" + city;
 	}
 	
 	

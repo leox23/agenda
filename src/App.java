@@ -1,16 +1,46 @@
+import java.util.Scanner;
 
 public class App {
 
 	public static void main(String[] args) {
-		/*
-		ManejadorAgenda.inputNuevoContacto();
-		Agenda.agregarContactos("Linda", "5555555", "new york");
-		Agenda.imprimirContactos();
-		Agenda.eliminarContacto("1");
-		Agenda.imprimirContactos();
-		Agenda.eliminarContacto("7");
-		*/
-		ManejadorAgenda.inputModificarContacto();
+		
+		Scanner entrada = new Scanner(System.in);
+		String opcion;
+		boolean activo = true;
+		System.out.println("------BIENVENIDO A LA AGENDA DE CONTACTOS PARA SOFKA U------ \n"
+				+ "--Menú Principal \n");
+		while(activo){
+			System.out.println("Selecciona una opción digitando el número para acceder a la opción que deseas: \n"
+					+ "1. Listar todos los contactos registrados \n"
+					+ "2. Agregar nuevo contacto \n"
+					+ "3. Eliminar contacto por ID \n"
+					+ "4. Modificar contacto por ID \n"
+					+ "5. Salir del menú \n");
+			opcion = entrada.nextLine();
+			switch(opcion){
+				case "1": 
+					Agenda.imprimirContactos();
+					break;
+				case "2":
+					ManejadorAgenda.inputNuevoContacto();
+					break;
+				case "3":
+					ManejadorAgenda.inputEliminarContacto();
+					break;
+				case "4":
+					ManejadorAgenda.inputModificarContacto();
+					break;
+				case "5":
+					activo = false;
+					break;
+				default:
+					System.out.println("Digita un caracter válido para acceder \n");
+					
+			}
+
+		}
+		System.out.println("\n---GRACIAS POR TU TIEMPO, ¡HASTA PRONTO!");
+		
 	}
 
 }
