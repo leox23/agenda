@@ -9,14 +9,20 @@ public class Agenda {
 	private static ArrayList<Contacto> contactos;
 	
 	
-	public static void archivo(){
-		
+	
+	public static void agregarContactos(String name, String celphone, String city){
+		leerContactos();
+		int nextId =    contactos.size() + 1;
+		contactos.add( new Contacto(String.valueOf(nextId), name, celphone, city));
 		File archivo;
 		PrintWriter pw;
 		try {
 			archivo = new File("AgendaContactos.txt");
 			pw = new PrintWriter(archivo, "UTF-8");
-			pw.println("Hola!");
+			
+			for (Contacto i : contactos) {
+				pw.println(i.getId() + "," + i.getName() + "," + i.getCelphone() + "," + i.getCity());
+			}
 			pw.close();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -24,6 +30,8 @@ public class Agenda {
 		
 		
 	}
+	
+	
 	
 	public static void leerContactos(){
 		
@@ -54,7 +62,9 @@ public class Agenda {
 			System.out.println(con.toString());
 		}
 		
-	} 
+	}
+	
+	
 	
 	
 }

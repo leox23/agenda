@@ -6,12 +6,12 @@ public class Contacto {
 	private String celphone;
 	private String city;
 	
-	public Contacto(String id,String name,String celphone, String address){
+	public Contacto(String id,String name,String celphone, String city){
 		
 		this.id = id;
 		this.name = name;
 		this.celphone = celphone;
-		this.city = address;
+		this.city = city;
 	}
 
 	public String getId() {
@@ -38,17 +38,17 @@ public class Contacto {
 		this.celphone = celphone;
 	}
 
-	public String getAddress() {
+	public String getCity() {
 		return city;
 	}
 
-	public void setAddress(String address) {
-		this.city = address;
+	public void setCity(String city) {
+		this.city = city;
 	}
 
 	@Override
 	public String toString() {
-		return "Contacto [id=" + id + ", name=" + name + ", celphone=" + celphone + ", address=" + city + "]";
+		return "Contacto [id=" + id + ", name=" + name + ", celphone=" + celphone + ", city=" + city + "]";
 	}
 	
 	
