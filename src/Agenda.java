@@ -89,6 +89,34 @@ public class Agenda {
 	}
 	
 	
+	public static void modificarContacto(String id, Contacto contactoMod){
+		
+		leerContactos();
+		for (Contacto i : contactos) {
+			if (i.getId().equals(id)) {
+			System.out.println("hola desde el if");
+				String name = contactoMod.getName();
+				if (name != "") {
+					i.setName(contactoMod.getName());
+				}
+				
+
+				String celphone = contactoMod.getCelphone();
+				if (celphone != "") {
+					i.setCelphone(contactoMod.getCelphone());
+				}
+
+				String city = contactoMod.getCity();
+				if (name != "") {
+					i.setCity(contactoMod.getCity());
+				}
+				break;
+			}
+		}
+		escribirContactos();
+		
+	}
+	
 	
 	
 }

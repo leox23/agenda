@@ -13,6 +13,13 @@ public class Contacto {
 		this.celphone = celphone;
 		this.city = city;
 	}
+	
+	public Contacto(String name,String celphone, String city){
+		
+		this.name = name;
+		this.celphone = celphone;
+		this.city = city;
+	}
 
 	public String getId() {
 		return id;
