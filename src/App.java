@@ -8,14 +8,14 @@ public class App {
 		String opcion;
 		boolean activo = true;
 		System.out.println("------BIENVENIDO A LA AGENDA DE CONTACTOS PARA SOFKA U------ \n"
-				+ "--Menú Principal \n");
+				+ "--Menï¿½ Principal \n");
 		while(activo){
-			System.out.println("Selecciona una opción digitando el número para acceder a la opción que deseas: \n"
+			System.out.println("Selecciona una opciï¿½n digitando el nï¿½mero para acceder a la opciï¿½n que deseas: \n"
 					+ "1. Listar todos los contactos registrados \n"
 					+ "2. Agregar nuevo contacto \n"
 					+ "3. Eliminar contacto por ID \n"
 					+ "4. Modificar contacto por ID \n"
-					+ "5. Salir del menú \n");
+					+ "5. Salir del menï¿½ \n");
 			opcion = entrada.nextLine();
 			switch(opcion){
 				case "1": 
@@ -34,12 +34,13 @@ public class App {
 					activo = false;
 					break;
 				default:
-					System.out.println("Digita un caracter válido para acceder \n");
+					System.out.println("Digita un caracter vï¿½lido para acceder \n");
 					
 			}
 
 		}
-		System.out.println("\n---GRACIAS POR TU TIEMPO, ¡HASTA PRONTO!");
+		entrada.close();
+		System.out.println("\n---GRACIAS POR TU TIEMPO, ï¿½HASTA PRONTO!");
 		
 	}
 

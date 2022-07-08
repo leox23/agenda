@@ -59,9 +59,14 @@ public class Agenda {
 	
 	public static void imprimirContactos(){
 		leerContactos();
-		System.out.println("--LISTADO DE CONTACTOS-- \n");
+		System.out.println("---------------------------------------------------------------------------------------");
+		System.out.printf("%5s %30s %20s %20s","ID","NOMBRE","TELEFONO","DIRECCIÓN");
+		System.out.println();
+		System.out.println("---------------------------------------------------------------------------------------");
 		for(Contacto con : contactos){
-			System.out.println(con.toString());
+			//System.out.println(con.toString());
+			System.out.format("%5s %30s %20s %20s",con.getId(),con.getName(),con.getCelphone(),con.getCity());
+			System.out.println();
 		}
 		System.out.println();
 		
@@ -73,6 +78,7 @@ public class Agenda {
 			Contacto f = contactos.remove(Integer.parseInt(id));
 			indexarContactos();
 			escribirContactos();
+			System.out.println("\nCONTACTO ELIMINADO EXITOSAMENTE");
 			
 		}catch(IndexOutOfBoundsException e){
 			System.out.println("No existe ID en la agenda");
@@ -102,7 +108,7 @@ public class Agenda {
 			}
 		}
 		escribirContactos();
-		System.out.println("\nCONTACTO MODIFICADO EXITOSAMENTE \n");
+		System.out.println("\nCONTACTO MODIFICADO EXITOSAMENTE \n\n");
 		
 	}
 	

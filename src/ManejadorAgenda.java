@@ -29,7 +29,13 @@ public class ManejadorAgenda {
 		String id = input.nextLine();
 		Contacto encontrado = Agenda.buscarContacto(id);
 		if (encontrado != null) {
-			System.out.println("Se encontró el siguiente contacto: \n" + encontrado.toString());
+			System.out.println("Se encontró el siguiente contacto: \n" );
+			System.out.println("---------------------------------------------------------------------------------------");
+			System.out.printf("%5s %30s %20s %20s","ID","NOMBRE","TELEFONO","DIRECCIÓN");
+			System.out.println();
+			System.out.println("---------------------------------------------------------------------------------------");
+			System.out.format("%5s %30s %20s %20s",encontrado.getId(),encontrado.getName(),encontrado.getCelphone(),encontrado.getCity());
+			System.out.println("\n");
 			Contacto c = inputContacto("Ingrese los nuevos datos del contacto que desea modificar",
 					"\nSi no quiere editarlo, solo presione enter:");
 			Agenda.modificarContacto(id, c);
